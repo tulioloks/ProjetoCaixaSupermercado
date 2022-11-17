@@ -15,6 +15,12 @@ public class Login {
 
     }
 
+    public Login(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
+
+    }
+
     public String getUsuario() {
         return usuario;
     }
