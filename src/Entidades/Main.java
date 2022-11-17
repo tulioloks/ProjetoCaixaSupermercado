@@ -3,6 +3,8 @@ import Enums.TipoPessoa;
 import Repository.PessoaDAO;
 import Repository.ProdutoDAO;
 import Repository.UsuarioDAO;
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import javax.swing.*;
 
 public class Main {
@@ -40,6 +42,7 @@ public class Main {
     }
 
     private static Object chamaSelecaoUsuario() {
+
         Object[] selectionValues = UsuarioDAO.findUsuariosSistemaInArray();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione o usuario?",
@@ -48,6 +51,7 @@ public class Main {
     }
 
     private static void checaSenhaUsuario(Object usuarioLogado) {
+
         String senhaDigitada = JOptionPane.showInputDialog(null, "Informe a senha do usuario (" + usuarioLogado + ")");
         Usuario usuarioByLogin = UsuarioDAO.findUsuarioByLogin((String) usuarioLogado);
 
@@ -60,6 +64,7 @@ public class Main {
     }
 
     private static Pessoa cadastroPessoa(){
+
         // identificação do cliente
         String[] opcaoPessoas = {"Fisica", "Juridica"};
         String nome = JOptionPane.showInputDialog(null, "Digite o nome da pessoa: ");
@@ -70,6 +75,7 @@ public class Main {
         if (tipoPessoa == 1) {
             tipoDocumento = "CNPJ";
         }
+
         String documento = JOptionPane.showInputDialog(null, "Digite o " + tipoDocumento + " da pessoa: ");
 
         if (tipoDocumento.equals("CPF")) {
@@ -88,31 +94,34 @@ public class Main {
     }
 
     private static ItemVenda cadastroProduto(){
-        boolean cadastro = true;
-        ItemVenda cadastroItem = new ItemVenda();
-        while (cadastro == true) {
 
             String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
             Double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor"));
             Integer quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantidade"));
-            cadastroItem.cadastrarProduto(nome, valor, quantidade);
+            Integer numero = Integer.valueOf(JOptionPane.showInputDialog(null, "Número"));
 
-            Integer cadastroPergunta = Integer.parseInt(JOptionPane.showInputDialog(null,"Deseja continuar cadastrando? \n 1 - Sim\n 2 - Não "));
-            if (cadastroPergunta == 2){
-                cadastro = false;
-            }
-        }
-        cadastroItem.mostrarItens();
-        telaInicial();
-        return cadastroItem;
+            ItemVenda cadastroItem = new ItemVenda();
+
+            cadastroItem.setNumero(numero);
+            cadastroItem.setNomeProduto(nome);
+            cadastroItem.setValorUnitario(valor);
+            cadastroItem.setQuantidade(quantidade);
+
+            return cadastroItem;
     }
 
     private static void realizarVenda(){
+
         Venda venda = new Venda();
 
-        Integer adicionarProduto = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
-        venda.adicionaItem(adicionarProduto);
+        Integer codigoProduto = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o código do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
 
-        System.out.println(venda.cupomFiscal());
+        venda.validaItem(codigoProduto);
+
+        if(codigoProduto == 500) {
+            System.out.println(venda.cupomFiscal());
+            telaInicial();
+        }
+        realizarVenda();
     }
 }

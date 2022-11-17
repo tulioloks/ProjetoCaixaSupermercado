@@ -4,6 +4,7 @@ package Entidades;
 import Enums.Pago;
 import Enums.StatusVenda;
 import Enums.TipoPagamento;
+import Repository.ProdutoDAO;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -63,13 +64,10 @@ public class Venda {
     //    item.add(itens);
     //}
 
-    public void adicionaItem(Integer codigo){
-        if(codigo.equals(itemVenda.getNumero())){
+    public void validaItem(Integer codigo){
+            List<ItemVenda> itens = ProdutoDAO.buscarPorCodigo(codigo);
+            for(ItemVenda itemVenda : itens)    {
             item.add(itemVenda);
-        }
-
-        else {
-            System.out.println("Produto não encontrado");
         }
     }
 
@@ -107,6 +105,7 @@ public class Venda {
         bd.append("                  ITENS DA VENDA " + "\n");
         bd.append("\n");
         int contador = 1;
+
         for (ItemVenda list : item){
             list.setNumero(contador);
             bd.append(list + "\n");

@@ -27,6 +27,17 @@ public class ProdutoDAO {
         return produtosFiltrados;
     }
 
+    public static List<ItemVenda> buscarPorCodigo(Integer codigo) {
+        List<ItemVenda> produtosFiltrados = new ArrayList<>();
+        for (ItemVenda produto : produtos) {
+            if (produto.getNumero() == codigo) {
+                produtosFiltrados.add(produto);
+                //System.out.println(produtosFiltrados);
+            }
+        }
+        return produtosFiltrados;
+    }
+
     public static Object[] findProdutosInArray() {
         List<ItemVenda> produtos = ProdutoDAO.buscarTodos();
         List<String> produtosDescricao = new ArrayList<>();

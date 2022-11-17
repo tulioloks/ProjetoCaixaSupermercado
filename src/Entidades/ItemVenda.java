@@ -31,13 +31,7 @@ public class ItemVenda {
         Quantidade = quantidade;
     }
 
-    public void cadastrarProduto(String nomeProduto, Double valorUnitario, Integer quantidade){
-        ItemVenda cadastro = new ItemVenda();
-        cadastro.NomeProduto = nomeProduto;
-        cadastro.ValorUnitario = valorUnitario;
-        cadastro.Quantidade = quantidade;
-        item.add(cadastro);
-    }
+
 
     public void mostrarItens(){
         for(ItemVenda cadas : item){
