@@ -1,14 +1,13 @@
 package Entidades;
 
+import Enums.TipoPessoa;
+
 public class Pessoa {
 
     private String nome;
     private String telefone;
     private String email;
-
     private Endereco endereco;
-
-    //private String tipo;
 
 
     public Pessoa(String nome, String telefone, String email, Endereco endereco) {
@@ -16,18 +15,12 @@ public class Pessoa {
         this.telefone = telefone;
         this.endereco = endereco;
         this.email = email;
-        //this.tipo = tipo;
 
     }
 
+    public Pessoa() {
 
-    public Pessoa() {}
-
-
-    //Atributos fiscais:
-//    private String finalidade;
-//    private String consumidorFinal;
-//    private String contribuinteIcms;
+    }
 
     public String getNome() {
         return nome;
@@ -62,34 +55,9 @@ public class Pessoa {
     }
 
     public String getDocumentoPrincipal() {
-        return "";
+        return null;
     }
 
-//    public String getTipo() {
-//        return tipo;
-//    }
-
-//    public String getFinalidade() {
-//        return finalidade;
-//    }
-//
-//    public void setFinalidade(String finalidade) {
-//        this.finalidade = finalidade;
-//    }
-//
-//    public String getConsumidorFinal() {
-//        return consumidorFinal;
-//    }
-//
-//    public void setConsumidorFinal(String consumidorFinal) {
-//        this.consumidorFinal = consumidorFinal;
-//    }
-//
-//    public String getContribuinteIcms() {
-//        return contribuinteIcms;
-//    }
-//
-//    public void setContribuinteIcms(String contribuinteIcms) {
-//        this.contribuinteIcms = contribuinteIcms;
-//    }
+    public void setTipo(TipoPessoa fisica) {
+    }
 }

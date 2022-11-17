@@ -1,2 +1,21 @@
-package Entidades;public class PessoaJuridica {
+package Entidades;
+
+import Enums.TipoPessoa;
+
+public class PessoaJuridica extends Pessoa{
+
+    private String cnpj;
+
+    public PessoaJuridica() {
+        setTipo(TipoPessoa.JURIDICA);
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
 }

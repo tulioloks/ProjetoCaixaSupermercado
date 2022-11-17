@@ -1,7 +1,5 @@
 package Entidades;
 
-import Entidades.PessoaJuridica;
-
 import java.math.BigDecimal;
 
 public class Transportador {

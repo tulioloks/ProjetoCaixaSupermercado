@@ -1,32 +1,35 @@
 package Entidades;
-import Entidades.Funcionario;
 
-public class Login {
+public class Usuario {
 
-    private String usuario;
+    private String login;
     private String senha;
 
     private Funcionario funcionario;
 
-    public Login(String usuario, String senha, Funcionario funcionario) {
-        this.usuario = usuario;
+    public Usuario() {
+
+    }
+
+    public Usuario(String login, String senha, Funcionario funcionario) {
+        this.login = login;
         this.senha = senha;
         this.funcionario = funcionario;
 
     }
 
-    public Login(String usuario, String senha) {
-        this.usuario = usuario;
+    public Usuario(String login, String senha) {
+        this.login = login;
         this.senha = senha;
 
     }
 
     public String getUsuario() {
-        return usuario;
+        return login;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsuario(String logn) {
+        this.login = login;
     }
 
     public String getSenha() {
@@ -43,5 +46,13 @@ public class Login {
 
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getLogin() {
+        return login;
     }
 }
