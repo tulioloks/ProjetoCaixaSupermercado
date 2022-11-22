@@ -11,7 +11,6 @@ public class ItemVenda {
     private Double SubTotal;
     private List<ItemVenda> item = new ArrayList<>();
 
-
     public ItemVenda(){
 
     }
@@ -22,7 +21,7 @@ public class ItemVenda {
 
     @Override
     public String toString(){
-        return Numero + " - " + NomeProduto +"       "+ Quantidade+"UN X " + ValorUnitario + "      Vl.Total. R$" + subTotal();
+        return Numero + " - " + NomeProduto +"       "+ Quantidade + " UN X " + ValorUnitario + "      Vl.Total. R$ " + subTotal();
     }
 
     public ItemVenda(String nomeProduto, Double valorUnitario, Integer quantidade) {
@@ -30,7 +29,6 @@ public class ItemVenda {
         ValorUnitario = valorUnitario;
         Quantidade = quantidade;
     }
-
 
 
     public void mostrarItens(){

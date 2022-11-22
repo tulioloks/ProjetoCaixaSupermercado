@@ -64,15 +64,31 @@ public class Venda {
     //    item.add(itens);
     //}
 
-    public void validaItem(Integer codigo){
+    public String validaItem(Integer codigo, Integer quantidadeProduto){
             List<ItemVenda> itens = ProdutoDAO.buscarPorCodigo(codigo);
-            for(ItemVenda itemVenda : itens)    {
-            item.add(itemVenda);
+
+
+            for(ItemVenda itemVenda2 : itens) {
+
+                Integer backup = itemVenda2.getQuantidade();
+
+                if (itemVenda2.getQuantidade() - quantidadeProduto > 0){
+
+                    itemVenda2.setQuantidade(quantidadeProduto);
+                    System.out.println("Produto adicionado: " + itemVenda2);
+                    item.add(itemVenda2);
+                    itemVenda2.setQuantidade(backup - quantidadeProduto);
+                }
+                else {
+                    System.out.println("Produto sem estoque!!!!");
+                }
+                List<ItemVenda> itensVenda = ProdutoDAO.salvarVenda(itemVenda2);
         }
+            return item.toString();
     }
 
-    public void removerItem(ItemVenda itens){
-        item.remove(itens);
+    public void removerItem(Integer qtdItens){
+
     }
 
     public Double descontos(){
@@ -87,6 +103,7 @@ public class Venda {
         StringBuilder bd = new StringBuilder();
         setStatus(StatusVenda.INICIANDO);
         setStatus(StatusVenda.PROCESSANDO);
+        bd.append("\n");
         bd.append("====================================================\n");
         bd.append("                   CUPOM FISCAL \n");
         bd.append("====================================================\n");
@@ -104,13 +121,13 @@ public class Venda {
         bd.append("====================================================\n");
         bd.append("                  ITENS DA VENDA " + "\n");
         bd.append("\n");
-        int contador = 1;
 
         for (ItemVenda list : item){
-            list.setNumero(contador);
             bd.append(list + "\n");
-            contador++;
+
         }
+        bd.append("====================================================\n");
+        bd.append("\n");
         bd.append("Situação: " + getPago() + "\n");
         setStatus((StatusVenda.FINALIZANDO));
         bd.append("Total da Venda:                            R$" + Total());

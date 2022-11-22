@@ -12,6 +12,15 @@ public class ProdutoDAO {
         produtos.add(produto);
     }
 
+    public static List<ItemVenda> salvarVenda(ItemVenda Produto){
+        List<ItemVenda> produtosVenda = new ArrayList<>();
+
+        for (ItemVenda produtinhos : produtosVenda){
+            produtosVenda.add(produtinhos);
+        }
+        return produtosVenda;
+    }
+
     public static List<ItemVenda> buscarTodos() {
         System.out.println(produtos);
         return produtos;
@@ -27,13 +36,13 @@ public class ProdutoDAO {
         return produtosFiltrados;
     }
 
-    public static List<ItemVenda> buscarPorCodigo(Integer codigo) {
+    public static List<ItemVenda> buscarPorCodigo(Object codigo) {
         List<ItemVenda> produtosFiltrados = new ArrayList<>();
         for (ItemVenda produto : produtos) {
-            if (produto.getNumero() == codigo) {
-                produtosFiltrados.add(produto);
-                //System.out.println(produtosFiltrados);
-            }
+          if (produto.getNumero().equals(codigo)){
+              produtosFiltrados.add(produto);
+          }
+
         }
         return produtosFiltrados;
     }

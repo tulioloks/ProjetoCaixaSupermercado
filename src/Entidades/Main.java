@@ -3,7 +3,6 @@ import Enums.TipoPessoa;
 import Repository.PessoaDAO;
 import Repository.ProdutoDAO;
 import Repository.UsuarioDAO;
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import javax.swing.*;
 
@@ -112,16 +111,23 @@ public class Main {
 
     private static void realizarVenda(){
 
+
+        boolean cadastrando = true;
         Venda venda = new Venda();
+        System.out.println("Venda Iniciada!!");
+        while (cadastrando == true) {
 
-        Integer codigoProduto = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o código do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
+            Integer quantidadeProduto = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite aquantidade do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
+            Integer codigoProduto = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o código do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
 
-        venda.validaItem(codigoProduto);
+            venda.validaItem(codigoProduto,quantidadeProduto);
 
-        if(codigoProduto == 500) {
-            System.out.println(venda.cupomFiscal());
-            telaInicial();
+
+
+            if (codigoProduto == 0) {
+                System.out.println(venda.cupomFiscal());
+                cadastrando = false;
+            }
         }
-        realizarVenda();
     }
 }

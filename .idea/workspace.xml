@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4999354d-e4cc-4c44-998e-23dfce054293" name="Changes" comment="Adicionar venda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/ItemVenda.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ProdutoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ProdutoDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Main.java" afterDir="false" />
@@ -39,7 +41,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Tulio/Desktop/ExemploProjetoPOO-main/ExemploProjetoPOO-main",
+    "last_opened_file_path": "C:/Users/Tulio/Desktop/ExemploProjetoPOO.v3-main",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0"
