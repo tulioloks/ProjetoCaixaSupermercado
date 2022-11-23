@@ -82,7 +82,9 @@ public class Venda {
                 adicionarItem(itemAdicionar);
             }
 
-            if(codigoProduto == 0) cadastrando = false;
+            if(codigoProduto == 0) {
+                System.out.println("Tatal da venda: " + Total());
+                cadastrando = false;}
         }
 
     }

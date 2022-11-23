@@ -2,50 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4999354d-e4cc-4c44-998e-23dfce054293" name="Changes" comment="Adicionar venda">
-      <change afterPath="$PROJECT_DIR$/src/Repository/VendaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Forms/RelatorioItensForms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Forms/TableItemVenda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Funcionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/ItemVenda.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Pessoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/PessoaFisica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/PessoaFisica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/PessoaJuridica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/PessoaJuridica.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Enums/TipoPessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Enums/TipoPessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Enums/FormaPagamento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Enums/TipoPagamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Enums/TipoPagamento.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ProdutoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ProdutoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Cartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Cartao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/ContasReceber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/ContasReceber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/CupomFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/CupomFiscal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Desconto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Desconto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entidades/Cartao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entidades/ContasReceber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entidades/CupomFiscal.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/NfDevolucao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/NfDevolucao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Nfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Nfe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/NotaFiscal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/PessoaFisica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/PessoaFisica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/PessoaJuridica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/PessoaJuridica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Transportador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Transportador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Venda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Venda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums/FormaPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/FormaPagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums/Pago.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/Pago.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums/StatusVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/StatusVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/FormaPagamento.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enums/TipoPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/TipoPagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums/TipoPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/TipoPessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UsuarioDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +55,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Forms" />
       <recent name="Enums" />
     </key>
   </component>
@@ -93,7 +65,7 @@
       <module name="ProjetoCaixaSupermercado" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Entidades.*" />
+          <option name="PATTERN" value="Forms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,7 +85,7 @@
       <module name="ProjetoCaixaSupermercado" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Entidades.*" />
+          <option name="PATTERN" value="Forms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
