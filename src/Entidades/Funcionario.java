@@ -11,8 +11,7 @@ public class Funcionario{
     private LocalDate dataAdmissao;
     private String numeroNis;
 
-    public Funcionario(PessoaFisica pessoaFisica,
-                       Integer idFuncionario , LocalDate dataAdmissao, String numeroNis) {
+    public Funcionario(Integer idFuncionario ,PessoaFisica pessoaFisica , LocalDate dataAdmissao, String numeroNis) {
         this.pessoaFisica = pessoaFisica;
         this.idFuncionario = idFuncionario;
         this.dataAdmissao = dataAdmissao;

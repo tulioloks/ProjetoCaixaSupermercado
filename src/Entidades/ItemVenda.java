@@ -15,6 +15,15 @@ public class ItemVenda {
 
     }
 
+    public ItemVenda(ItemVenda itemAdicionar) {
+        item.add(itemAdicionar);
+    }
+
+    public ItemVenda(List<ItemVenda> buscarPorCodigo) {
+
+    }
+
+
     public Double subTotal(){
         return Quantidade * ValorUnitario;
     }
@@ -24,7 +33,8 @@ public class ItemVenda {
         return Numero + " - " + NomeProduto +"       "+ Quantidade + " UN X " + ValorUnitario + "      Vl.Total. R$ " + subTotal();
     }
 
-    public ItemVenda(String nomeProduto, Double valorUnitario, Integer quantidade) {
+    public ItemVenda(Integer numero,String nomeProduto, Double valorUnitario, Integer quantidade) {
+        Numero = numero;
         NomeProduto = nomeProduto;
         ValorUnitario = valorUnitario;
         Quantidade = quantidade;

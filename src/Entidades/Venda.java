@@ -6,6 +6,7 @@ import Enums.StatusVenda;
 import Enums.TipoPagamento;
 import Repository.ProdutoDAO;
 
+import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -60,35 +61,38 @@ public class Venda {
         }
     }
 
-    //public void adicionarItem(ItemVenda itens){
-    //    item.add(itens);
-    //}
-
-    public String validaItem(Integer codigo, Integer quantidadeProduto){
-            List<ItemVenda> itens = ProdutoDAO.buscarPorCodigo(codigo);
-
-
-            for(ItemVenda itemVenda2 : itens) {
-
-                Integer backup = itemVenda2.getQuantidade();
-
-                if (itemVenda2.getQuantidade() - quantidadeProduto > 0){
-
-                    itemVenda2.setQuantidade(quantidadeProduto);
-                    System.out.println("Produto adicionado: " + itemVenda2);
-                    item.add(itemVenda2);
-                    itemVenda2.setQuantidade(backup - quantidadeProduto);
-                }
-                else {
-                    System.out.println("Produto sem estoque!!!!");
-                }
-                List<ItemVenda> itensVenda = ProdutoDAO.salvarVenda(itemVenda2);
-        }
-            return item.toString();
+    public void adicionarItem(ItemVenda itens){
+        item.add(itens);
     }
 
-    public void removerItem(Integer qtdItens){
+    public void validaItem(){
+        boolean cadastrando = true;
 
+            while (cadastrando == true ){
+            Integer quantidadeProduto = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite aquantidade do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
+            Integer codigoProduto = Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o código do produto:", "Balcão", JOptionPane.QUESTION_MESSAGE));
+
+            List<ItemVenda> itens = ProdutoDAO.buscarPorCodigo(codigoProduto);
+
+            for (ItemVenda itemAdicionar : itens) {
+                itemAdicionar.setQuantidade(quantidadeProduto);
+                itemAdicionar = new ItemVenda(codigoProduto,itemAdicionar.getNomeProduto(),itemAdicionar.getValorUnitario(),itemAdicionar.getQuantidade());
+
+                System.out.println("Item Adicionado a venda: " + itemAdicionar);
+                adicionarItem(itemAdicionar);
+            }
+
+            if(codigoProduto == 0) cadastrando = false;
+        }
+
+    }
+
+    public void salvarItem(ItemVenda salvaItem){
+        item.add(salvaItem);
+    }
+
+    public void removerItem(ItemVenda listaItens){
+        item.add(listaItens);
     }
 
     public Double descontos(){

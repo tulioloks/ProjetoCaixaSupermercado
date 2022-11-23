@@ -1,37 +1,31 @@
 package Entidades;
 
-public class Cliente {
+import Enums.TipoPessoa;
 
-    private String Nome;
-    private String Email;
+public class Cliente{
 
-    public Cliente(){
+    private Integer id;
+
+    private Pessoa pessoa;
+
+    public Cliente() {};
+
+    public Cliente(Integer id, Pessoa pessoa){
+        this.id = id;
+        this.pessoa = pessoa;
 
     }
 
-    public Cliente(String nome, String email) {
-        Nome = nome;
-        Email = email;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public String getNome() {
-        return Nome;
-    }
-
-    public void setNome(String nome) {
-        Nome = nome;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
 
     @Override
-    public String toString(){
-        return "Cliente: " + Nome + " ,Email: " + Email;
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", pessoa=" + pessoa.toString() +
+                '}';
     }
 }
