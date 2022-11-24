@@ -1,10 +1,8 @@
 package Entidades;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class NotaFiscal {
-
 
     private Integer inscricaoEstadual;
     private Integer chaveAcesso;
@@ -14,9 +12,6 @@ public class NotaFiscal {
     private LocalDate saida;
     private String dadosAdicionais;
     private Integer serie;
-
-    private Transportador transportador;
-
 
 
     private BigDecimal pesoBruto;
@@ -28,7 +23,6 @@ public class NotaFiscal {
     public void setSerie(Integer serie) {
         this.serie = serie;
     }
-
 
 
     public Integer getInscricaoEstadual() {
@@ -87,15 +81,7 @@ public class NotaFiscal {
         this.dadosAdicionais = dadosAdicionais;
     }
 
-    public Transportador getTransportador() {
-        return transportador;
-    }
-
-    public void setTransportador(Transportador transportador) {
-        this.transportador = transportador;
-    }
-
-
 }
+
 
 

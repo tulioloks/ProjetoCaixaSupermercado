@@ -1,13 +1,8 @@
 package Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 import Entidades.Cliente;
 import Entidades.Pessoa;
-import Entidades.PessoaFisica;
-import Entidades.PessoaJuridica;
-import Enums.TipoPessoa;
-
 
 public final class ClienteDAO {
 

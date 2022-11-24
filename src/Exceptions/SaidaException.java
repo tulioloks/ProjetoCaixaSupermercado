@@ -1,5 +1,4 @@
 package Exceptions;
-
 import javax.swing.*;
 
 public class SaidaException extends Exception {

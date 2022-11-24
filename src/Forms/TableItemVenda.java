@@ -1,7 +1,5 @@
 package Forms;
-
 import Entidades.ItemVenda;
-
 import javax.swing.table.AbstractTableModel;
 import java.util.Vector;
 

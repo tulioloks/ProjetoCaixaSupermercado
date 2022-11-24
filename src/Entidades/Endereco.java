@@ -2,44 +2,22 @@ package Entidades;
 
 public class Endereco {
 
-    private String cep;
-    private String complemento;
+
     private String bairro;
     private String cidade;
-
-    private String municipio;
-
-    private String uf;
+    private String rua;
     private Integer numero;
 
-    public Endereco(String cep, String complemento, String bairro, String cidade, String municipio, String uf ,Integer numero) {
-        this.cep = cep;
-        this.complemento = complemento;
+
+    public Endereco(String bairro, String cidade, String rua, Integer numero) {
         this.bairro = bairro;
         this.cidade = cidade;
-        this.municipio = municipio;
-        this.uf = uf;
+        this.rua = rua;
         this.numero = numero;
     }
 
     public Endereco() {
 
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
     }
 
     public String getBairro() {
@@ -58,6 +36,14 @@ public class Endereco {
         this.cidade = cidade;
     }
 
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
     public Integer getNumero() {
         return numero;
     }
@@ -66,29 +52,12 @@ public class Endereco {
         this.numero = numero;
     }
 
-    public String getMunicipio() {
-        return municipio;
-    }
-
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
     @Override
     public String toString() {
         return "Endereco{" +
-                "cep='" + cep + '\'' +
-                ", complemento='" + complemento + '\'' +
-                ", bairro='" + bairro + '\'' +
+                "bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
+                ", rua='" + rua + '\'' +
                 ", numero=" + numero +
                 '}';
     }

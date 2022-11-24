@@ -16,7 +16,7 @@ public class PessoaJuridicaDAO {
         PessoaJuridica pj = new PessoaJuridica("betha sistemas",
                                   "4834324040",
                                   "betha@betha.com.br",
-                                  new Endereco("88811-235", "..", "Pio Corrêa","Criciuma", "Criciuma", "SC", 320),
+                                  new Endereco("Centro", "Joinville", "Av. santos dummont", 10),
                                   "Betha Sistemas",
                                   "12.456.789/0001-12",
                                     "101112405");
@@ -25,7 +25,7 @@ public class PessoaJuridicaDAO {
         PessoaJuridica pj1 = new PessoaJuridica("Mecanica do Tio joão",
                                     "48996724089",
                                     "mecanicatiojoao@gmail.com",
-                                    new Endereco("88803-240", "..", "Ana maria", "Criciuma", "Criciuma", "SC", 405),
+                                    new Endereco("Ana maria", "Criciuma", "123deOliveira4", 5),
                                     "Mecanica do tio joão Ltda.",
                                     "40.324.455/0001-02",
                                     "123457890");

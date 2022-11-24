@@ -1,5 +1,5 @@
 package Forms;
-import Entidades.ItemVenda;
+import Entidades.Cliente;
 import Entidades.Main;
 import Exceptions.SaidaException;
 import javax.swing.*;
@@ -10,23 +10,23 @@ import java.awt.event.WindowEvent;
 import java.util.List;
 import java.util.Vector;
 
-public class RelatorioItensForms extends JPanel{
+public class RelatorioClienteForms extends JPanel{
 
         private static final long serialVersionUID = 1L;
 
         public static final String[] nomeColunas =
-                {"Nome", "Valor", "Quantidade", ""};
+                {"Nome", "Documento CPF/CNPJ", "Telefone", ""};
 
         protected JTable table;
         protected JScrollPane scroller;
-        protected TableItemVenda tabela;
+        protected TabelaCliente tabela;
 
-        public RelatorioItensForms(Vector<ItemVenda> vetorDados) {
+        public RelatorioClienteForms(Vector<Cliente> vetorDados) {
             iniciarComponentes(vetorDados);
         }
 
-        public void iniciarComponentes(Vector<ItemVenda> vetorDados) {
-            tabela = new TableItemVenda(nomeColunas, vetorDados);
+        public void iniciarComponentes(Vector<Cliente> vetorDados) {
+            tabela = new TabelaCliente(nomeColunas, vetorDados);
             table = new JTable();
             table.setModel(tabela);
             table.setSurrendersFocusOnKeystroke(true);
@@ -41,7 +41,7 @@ public class RelatorioItensForms extends JPanel{
             add(scroller, BorderLayout.CENTER);
         }
 
-        public static void emitirRelatorio(List<ItemVenda> itens) {
+        public static void emitirRelatorio(List<Cliente> clientes) {
             try {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
                 JFrame frame = new JFrame("Relatorio");
@@ -54,15 +54,14 @@ public class RelatorioItensForms extends JPanel{
                         } catch (SaidaException e) {
                             throw new RuntimeException(e);
                         }
-                        ;
                     }
                 });
-                Vector<ItemVenda> vetorDados = new Vector<ItemVenda>();
-                for (ItemVenda produto : itens) {
-                    vetorDados.add(produto);
+                Vector<Cliente> vetorDados = new Vector();
+                for (Cliente cliente : clientes) {
+                    vetorDados.add(cliente);
                 }
 
-                frame.getContentPane().add(new RelatorioItensForms(vetorDados));
+                frame.getContentPane().add(new Forms.RelatorioClienteForms(vetorDados));
                 frame.pack();
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
@@ -70,5 +69,4 @@ public class RelatorioItensForms extends JPanel{
                 e.printStackTrace();
             }
         }
-
 }

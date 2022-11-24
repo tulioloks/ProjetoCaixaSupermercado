@@ -15,7 +15,7 @@ public class PessoaFisicaDAO {
         PessoaFisica pf = new PessoaFisica("Weber",
                 "40028922",
                 "weberM@gmail.com",
-                new Endereco("88804020", "..", "Santa rita", "São Paulo", "Miracatu", "SP", 10),
+                new Endereco("Centro", "Criciuma", "Av.centenario", 10),
                 "525789123-32",
                 LocalDate.now());
 
@@ -24,7 +24,7 @@ public class PessoaFisicaDAO {
         PessoaFisica pf1 = new PessoaFisica("Tulio",
                 "12345678",
                 "tulioGabrielDm@gmail.com",
-                new Endereco("88804589", "..", "São luis", "Criciuma", "Criciuma", "SC", 11),
+                new Endereco("São luis", "Criciuma", "Washington Luis", 15),
                 "525759324-88",
                 LocalDate.now());
 
