@@ -116,7 +116,9 @@ public class Venda {
         bd.append("                   CUPOM FISCAL \n");
         bd.append("====================================================\n");
         if(cliente!=null){
-            bd.append("Cliente: " + cliente + "\n");
+            bd.append("Cliente: " + cliente.getPessoa().getNome() + "\n");
+            bd.append("CPF/CNPJ: " + cliente.getPessoa().getDocumentoPrincipal() + "\n");
+
         }else {
             bd.append("Cliente: Consumidor final\n");
         }

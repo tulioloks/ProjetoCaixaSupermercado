@@ -43,7 +43,6 @@ public class PessoaJuridicaDAO {
     }
 
     public static List<PessoaJuridica> buscarTodos() {
-        System.out.println(pessoasJ);
         return pessoasJ;
     }
 

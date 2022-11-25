@@ -29,7 +29,6 @@ public class PessoaFisicaDAO {
                 LocalDate.now());
 
         salvar(pf1);
-
     }
 
 
@@ -46,7 +45,6 @@ public class PessoaFisicaDAO {
     }
 
     public static List<PessoaFisica> buscarTodos() {
-        System.out.println(pessoasF);
         return pessoasF;
     }
 
