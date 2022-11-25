@@ -46,7 +46,7 @@ public final class ClienteDAO {
         return clientesFiltrados;
     }
 
-    public static Object[] findClientesInArray() {
+    public Object[] findClientesInArray() {
         List<Cliente> clientes = ClienteDAO.buscarTodos();
         List<String> nomesClientes = new ArrayList<>();
 
@@ -57,19 +57,15 @@ public final class ClienteDAO {
         return nomesClientes.toArray();
     }
 
-    public static Cliente findClientesbyDocumentoPrincipal(String numDocumento) {
+    public static Cliente findClientesbyDocumentoPrincipal() {
         List<Cliente> clientes = ClienteDAO.buscarTodos();
         Cliente cliente1 = new Cliente();
         for (Cliente cliente: clientes) {
-            if (cliente.getPessoa().getDocumentoPrincipal().equals(numDocumento)) {
-                cliente1 = cliente;
-            }
+           clientes.add(cliente1);
+
         }
 
         return cliente1;
     }
-
-
-
 }
 

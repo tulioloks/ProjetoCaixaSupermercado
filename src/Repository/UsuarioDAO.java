@@ -13,7 +13,6 @@ public class UsuarioDAO {
 
     public static List<Usuario> findUsuariosSistema(List<Funcionario> funcionarios) {
 
-
         Usuario usuario = new Usuario();
         usuario.setLogin(funcionarios.get(0).getPessoaFisica().getNome());
         usuario.setSenha("admin");

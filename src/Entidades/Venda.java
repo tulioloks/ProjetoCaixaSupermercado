@@ -118,7 +118,7 @@ public class Venda {
         if(cliente!=null){
             bd.append("Cliente: " + cliente + "\n");
         }else {
-            bd.append("Cliente: não cadastrado \n");
+            bd.append("Cliente: Consumidor final\n");
         }
         bd.append("Número do pedido:                         "+ Numero+ "\n");
         bd.append("Data da Compra:                           " + sdf.format(now) + "\n");
@@ -140,6 +140,13 @@ public class Venda {
         setStatus((StatusVenda.FINALIZANDO));
         bd.append("Total da Venda:                            R$" + Total());
         return bd.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "status=" + status +
+                '}';
     }
 
     public List<ItemVenda> getItem() {
@@ -197,4 +204,5 @@ public class Venda {
     public void setParcelas(Integer parcelas) {
         this.Parcelas = parcelas;
     }
+
 }

@@ -1,5 +1,7 @@
 package Entidades;
 
+import Repository.ProdutoDAO;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -3,6 +3,7 @@ import Enums.TipoPagamento;
 import Enums.TipoPessoa;
 import Forms.RelatorioClienteForms;
 import Forms.RelatorioItensForms;
+import Forms.RelatorioVendaForms;
 import Repository.*;
 import javax.swing.*;
 import java.time.LocalDate;
@@ -32,34 +33,25 @@ public class Main {
 
     public static void telaInicial() throws SaidaException {
 
-        String[] opcoesMenuCadastro = {"Cadastrar Cliente", "Cadastrar Produto", "Venda","Relatorios", "Sair"};
+        String[] opcoesMenuCadastro = {"Cadastros", "Venda","Relatorios", "Sair"};
         int menuCadastro = JOptionPane.showOptionDialog(null, "Escolha uma opção:",
                 "Tela Inicial",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuCadastro, opcoesMenuCadastro[0]);
 
         switch(menuCadastro){
             case 0:
-                menuDeCadastroCliente();
-                telaInicial();
+                menuCadastro();
                 break;
 
             case 1:
-                ItemVenda produto = null;
-                produto = cadastroProduto();
-                ProdutoDAO.salvar(produto);
-                telaInicial();
+                realizarVenda();
                 break;
 
             case 2:
-                realizarVenda();
-                telaInicial();
-                break;
-
-            case 3:
                 menuDeRelatorios();
                 break;
 
-            case 4:
+            case 3:
                 System.exit(0);
                 break;
         }
@@ -92,7 +84,7 @@ public class Main {
     }
 
     public static void menuDeRelatorios() throws SaidaException {
-        String[] relatorios = {"Relatorio Produtos", "Relatorio Pessoas", "Voltar"};
+        String[] relatorios = {"Relatorio Produtos", "Relatorio Pessoas", "Relatorio Vendas", "Voltar"};
 
         Integer relatorioOpcao = JOptionPane.showOptionDialog(null, "Escolha uma opção:",
                 "Relatorios",
@@ -104,7 +96,11 @@ public class Main {
         }else if (relatorioOpcao == 1){
             chamarRelatorioClientes();
 
-        } else {
+        }else if(relatorioOpcao == 2 ){
+            chamarRelatorioVendas();
+        }
+
+        else if (relatorioOpcao == 3) {
             telaInicial();
         }
     }
@@ -112,8 +108,8 @@ public class Main {
     private static Object chamaSelecaoUsuario() throws SaidaException{
         Object[] selectionValues = UsuarioDAO.findUsuariosSistemaInArray();
         String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione o usuario?",
-                "CaixaAPP", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+        Object selection = JOptionPane.showInputDialog(null, "Selecione o usuario",
+                "Login", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
 
         if (selection == null) {
             throw new SaidaException();
@@ -179,34 +175,53 @@ public class Main {
         return endereco;
     }
 
-    private static ItemVenda cadastroProduto() throws SaidaException{
+    private static ItemVenda cadastroProduto(){
 
         try{
-        String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
-        Double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor"));
-        Integer quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantidade"));
-        Integer numero = Integer.valueOf(JOptionPane.showInputDialog(null, "Número"));
+            String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
+            Double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor"));
+            Integer quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantidade"));
+            Integer numero = Integer.valueOf(JOptionPane.showInputDialog(null, "Número"));
 
-        ItemVenda cadastroItem = new ItemVenda();
+            ItemVenda cadastroItem = new ItemVenda();
 
-        cadastroItem.setNumero(numero);
-        cadastroItem.setNomeProduto(nome);
-        cadastroItem.setValorUnitario(valor);
-        cadastroItem.setQuantidade(quantidade);
+            cadastroItem.setNumero(numero);
+            cadastroItem.setNomeProduto(nome);
+            cadastroItem.setValorUnitario(valor);
+            cadastroItem.setQuantidade(quantidade);
 
-        return cadastroItem;
+            return cadastroItem;
 
         }catch (NullPointerException e){
 
 
         }return null;
     }
+    private static Cliente chamaClientes() throws SaidaException {
+
+        Object[] selectionValues = getClienteDAO().findClientesInArray();
+        String initialSelection = (String) selectionValues[0];
+        Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
+                "SeguradoraAPP", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+        List<Cliente> clientes = getClienteDAO().buscarPorNome((String) selection);
+        return clientes.get(0);
+        //if (selection == null) {
+        //    throw new SaidaException();
+        //}
+
+    }
+
 
     private static void realizarVenda() throws SaidaException {
 
         System.out.println("Venda Iniciada!!");
         Venda venda = new Venda();
+
+        venda.setCliente(chamaClientes());
+
         venda.validaItem();
+
+
 
         String[] opcoesMenuFormasPagamento = {"Dinheiro", "Credito", "Debito"};
         int menuPagamento = JOptionPane.showOptionDialog(null, "Forma de Pagamento:",
@@ -243,6 +258,31 @@ public class Main {
 
         System.out.println(venda.cupomFiscal());
         VendaDAO.salvar(venda);
+        telaInicial();
+    }
+
+    private static void menuCadastro() throws SaidaException {
+        String[] opcoesMenuCadastro = {"Produtos", "Clientes", "Voltar"};
+        int menu = JOptionPane.showOptionDialog(null, "Cadastros:",
+                "Menu Cadastros",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuCadastro, opcoesMenuCadastro[0]);
+
+        switch(menu){
+            case 0:
+                ItemVenda produto = cadastroProduto();
+                ProdutoDAO.salvar(produto);
+                telaInicial();
+                break;
+
+            case 1:
+                menuDeCadastroCliente();
+                telaInicial();
+                break;
+
+            case 2:
+                telaInicial();
+                break;
+        }
     }
 
     public static ProdutoDAO getProdutoDAO() {
@@ -255,6 +295,11 @@ public class Main {
         return cliente;
     }
 
+    public static VendaDAO getVendaDAO() {
+        VendaDAO venda = new VendaDAO();
+        return venda;
+    }
+
     private static void chamarRelatorioItens(){
         List<ItemVenda> itens = getProdutoDAO().buscarTodos();
         RelatorioItensForms.emitirRelatorio(itens);
@@ -263,5 +308,10 @@ public class Main {
     private static void chamarRelatorioClientes(){
         List<Cliente> cliente = getClienteDAO().buscarTodos();
         RelatorioClienteForms.emitirRelatorio(cliente);
+    }
+
+    private static void chamarRelatorioVendas(){
+        List<Venda> venda = getVendaDAO().buscarTodos();
+        RelatorioVendaForms.emitirRelatorio(venda);
     }
 }

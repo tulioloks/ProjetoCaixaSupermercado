@@ -14,6 +14,7 @@ public class ProdutoDAO {
 
     public static void salvar(ItemVenda produto) {
         produtos.add(produto);
+
     }
 
     public static List<ItemVenda> buscarTodos() {
