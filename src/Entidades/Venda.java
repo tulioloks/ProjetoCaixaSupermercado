@@ -1,5 +1,5 @@
 package Entidades;
-import Enums.Pago;
+import Enums.Situacao;
 import Enums.StatusVenda;
 import Enums.TipoPagamento;
 import Exceptions.SaidaException;
@@ -7,18 +7,13 @@ import Repository.ProdutoDAO;
 
 import javax.swing.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Venda {
 
     private List<ItemVenda> item = new ArrayList<>();
-
-    private ItemVenda itemVenda;
     private Cliente cliente;
-    private Pago pago;
+    private Situacao pago;
     private StatusVenda status;
     private TipoPagamento tipoPagamento;
     private Date now = new Date();
@@ -122,7 +117,9 @@ public class Venda {
         }else {
             bd.append("Cliente: Consumidor final\n");
         }
-        bd.append("Número do pedido:                         "+ Numero+ "\n");
+        Random numero = new Random();
+        Numero = numero.nextInt(100);
+        bd.append("Número do pedido:                         "+ Numero + "\n");
         bd.append("Data da Compra:                           " + sdf.format(now) + "\n");
         setStatus(StatusVenda.IMPRIMINDO);
         bd.append("Status:                                   " + getStatus() + "\n");
@@ -163,11 +160,11 @@ public class Venda {
         this.cliente = cliente;
     }
 
-    public Pago getPago() {
+    public Situacao getPago() {
         return pago;
     }
 
-    public void setPago(Pago pago) {
+    public void setPago(Situacao pago) {
         this.pago = pago;
     }
 

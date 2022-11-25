@@ -1,4 +1,5 @@
 package Entidades;
+import Enums.Situacao;
 import Enums.TipoPagamento;
 import Enums.TipoPessoa;
 import Forms.RelatorioClienteForms;
@@ -221,8 +222,6 @@ public class Main {
 
         venda.validaItem();
 
-
-
         String[] opcoesMenuFormasPagamento = {"Dinheiro", "Credito", "Debito"};
         int menuPagamento = JOptionPane.showOptionDialog(null, "Forma de Pagamento:",
                 "Menu Forma de Pagamento",
@@ -255,6 +254,8 @@ public class Main {
         else{
             venda.setTipoPagamento(TipoPagamento.DEBITO);
         }
+
+        venda.setPago(Situacao.PAGO);
 
         System.out.println(venda.cupomFiscal());
         VendaDAO.salvar(venda);

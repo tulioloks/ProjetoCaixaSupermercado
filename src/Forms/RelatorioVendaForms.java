@@ -15,7 +15,7 @@ public class RelatorioVendaForms extends JPanel{
     private static final long serialVersionUID = 1L;
 
     public static final String[] nomeColunas =
-            {"Status", "Valor", "Valor Venda", ""};
+            {"Núemero da venda", "Status", "Nome Cliente", "Valor Venda",""};
 
     protected JTable table;
     protected JScrollPane scroller;
@@ -33,7 +33,7 @@ public class RelatorioVendaForms extends JPanel{
         scroller = new javax.swing.JScrollPane(table);
         table.setPreferredScrollableViewportSize(new java.awt.Dimension(500, 300));
 
-        TableColumn colunaEscondida = table.getColumnModel().getColumn(TableItemVenda.INDEX_ESCONDIDO);
+        TableColumn colunaEscondida = table.getColumnModel().getColumn(TableVenda.INDEX_ESCONDIDO);
         colunaEscondida.setMinWidth(2);
         colunaEscondida.setPreferredWidth(2);
         colunaEscondida.setMaxWidth(2);

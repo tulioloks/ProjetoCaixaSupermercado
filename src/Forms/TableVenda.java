@@ -11,10 +11,11 @@ public class TableVenda extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    public static final int INDEX_STATUS = 0;
-    public static final int INDEX_TIPO = 1;
-    public static final int INDEX_TOTAL = 2;
-    public static final int INDEX_ESCONDIDO = 3;
+    public static final int INDEX_NUMERO = 0;
+    public static final int INDEX_STATUS = 1;
+    public static final int INDEX_CLIENTE = 2;
+    public static final int INDEX_TOTAL = 3;
+    public static final int INDEX_ESCONDIDO = 4;
 
     protected String[] nomeColunas;
     protected Vector<Venda> vetorDados;
@@ -42,10 +43,12 @@ public class TableVenda extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         Venda registroItem = (Venda) vetorDados.get(linha);
         switch (coluna) {
+            case INDEX_NUMERO:
+                return registroItem.getNumber();
             case INDEX_STATUS:
                 return registroItem.getStatus();
-            case INDEX_TIPO:
-                return registroItem.getCliente();
+            case INDEX_CLIENTE:
+                return registroItem.getCliente().getPessoa().getNome();
             case INDEX_TOTAL:
                 return registroItem.Total();
             default:
