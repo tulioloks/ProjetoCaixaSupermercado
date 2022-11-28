@@ -12,6 +12,17 @@ public class ProdutoDAO {
 
     }
 
+    public static void produtoPreCarregado(){
+        ItemVenda item = new ItemVenda();
+
+        item.setNumero(10);
+        item.setNomeProduto("Batata");
+        item.setValorUnitario(10.50);
+        item.setQuantidade(20);
+
+        produtos.add(item);
+    }
+
     public static void salvar(ItemVenda produto) {
         produtos.add(produto);
 

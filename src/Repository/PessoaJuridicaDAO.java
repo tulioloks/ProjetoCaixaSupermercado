@@ -4,6 +4,9 @@ import Entidades.Endereco;
 import Entidades.PessoaFisica;
 import Entidades.PessoaJuridica;
 
+import javax.swing.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +21,7 @@ public class PessoaJuridicaDAO {
                                   "betha@betha.com.br",
                                   new Endereco("Centro", "Joinville", "Av. santos dummont", 10),
                                   "Betha Sistemas",
-                                  "12.456.789/0001-12",
+                                  "12.345.678/0001-90",
                                     "101112405");
         salvar(pj);
 
@@ -27,7 +30,7 @@ public class PessoaJuridicaDAO {
                                     "mecanicatiojoao@gmail.com",
                                     new Endereco("Ana maria", "Criciuma", "123deOliveira4", 5),
                                     "Mecanica do tio joão Ltda.",
-                                    "40.324.455/0001-02",
+                                    "01.234.567/0001-89",
                                     "123457890");
 
         salvar(pj1);
@@ -38,8 +41,54 @@ public class PessoaJuridicaDAO {
     }
 
 
-    public static void excluir(Integer id) {
-        pessoasJ.remove(id);
+    public static void excluir(PessoaJuridica pj) {
+        pessoasJ.remove(pj);
+    }
+
+    public static void editar(PessoaJuridica pj) {
+
+        pj.setNome(JOptionPane.showInputDialog(null, "Digite o nome: ", pj.getNome()));
+        pj.setRazaoSocial(JOptionPane.showInputDialog(null, "Digite a razão social: ", pj.getRazaoSocial()));
+        pj.setInscricaoEstadual(JOptionPane.showInputDialog(null, "Digite a inscrição estadual: ", pj.getInscricaoEstadual()));
+        pj.setTelefone(JOptionPane.showInputDialog(null, "Digite o telefone: ", pj.getTelefone()));
+
+        String cnpjAntigo = pj.getCnpj();
+        String cnpjNovo;
+        while (true) {
+            cnpjNovo = JOptionPane.showInputDialog(null, "Digite o cnpj", cnpjAntigo);
+
+            if (cnpjNovo.length() > 0 && buscarPorCnpj(cnpjNovo) != null && !cnpjNovo.equals(cnpjAntigo)) {
+                JOptionPane.showMessageDialog(null, "Já existe um cadastro com este cnpj", "", JOptionPane.ERROR_MESSAGE);
+                continue;
+            }
+            else if (cnpjNovo.length() == 0) {
+                JOptionPane.showMessageDialog(null, "Erro! cnpj é um dado obrigatório");
+                continue;
+            }
+
+            break;
+        }
+        pj.setCnpj(cnpjNovo);
+
+        pj.setEmail(JOptionPane.showInputDialog(null, "Digite o e-mail: ", pj.getEmail()));
+
+
+
+        Endereco endereco = pj.getEndereco();
+        endereco.setRua(JOptionPane.showInputDialog(null, "Digite o nome da Rua", endereco.getRua()));
+        endereco.setBairro(JOptionPane.showInputDialog(null, "Digite o nome do Bairro", endereco.getBairro()));
+        endereco.setCidade(JOptionPane.showInputDialog(null, "Digite o nome da Cidade", endereco.getCidade()));
+
+        while (true) {
+            try {
+                endereco.setNumero(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número do endereço", endereco.getNumero())));
+                break;
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Erro! informe apenas números", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        pj.setEndereco(endereco);
     }
 
     public static List<PessoaJuridica> buscarTodos() {

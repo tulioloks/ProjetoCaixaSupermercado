@@ -14,20 +14,14 @@ public final class ClienteDAO {
             salvar(pessoa);
         }
 
-
-
     }
 
     public static void salvar(Pessoa pessoa) {
         clientes.add(new Cliente(clientes.size() + 1,pessoa));
     }
 
-    public static void excluir(Integer id) {
-        clientes.remove(id);
-    }
-
-    public static void editar() {
-
+    public static void excluir(Pessoa pessoa) {
+        clientes.remove(pessoa);
     }
 
 
@@ -45,7 +39,7 @@ public final class ClienteDAO {
         return clientesFiltrados;
     }
 
-    public Object[] findClientesInArray() {
+    public static Object[] findClientesInArray() {
         List<Cliente> clientes = ClienteDAO.buscarTodos();
         List<String> nomesClientes = new ArrayList<>();
 
@@ -56,15 +50,6 @@ public final class ClienteDAO {
         return nomesClientes.toArray();
     }
 
-    public static Cliente findClientesbyDocumentoPrincipal() {
-        List<Cliente> clientes = ClienteDAO.buscarTodos();
-        Cliente cliente1 = new Cliente();
-        for (Cliente cliente: clientes) {
-           clientes.add(cliente1);
 
-        }
-
-        return cliente1;
-    }
 }
 

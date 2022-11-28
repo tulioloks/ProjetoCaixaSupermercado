@@ -30,18 +30,22 @@ public class Nfe{
         }
     }
 
+    public void setVenda(Venda venda) {
+        this.venda = venda;
+    }
+
     public String notaFiscal(){
         StringBuilder bd = new StringBuilder();
 
-        bd.append("Número da nota fiscal: " + numeroNf /*utilizar a da venda*/ );
-        bd.append("Natureza da operacao: Venda de mercadoria" );
-        bd.append("Chave de acesso: " + chaveDeAcesso);
-        bd.append("Nome/Razão Social: " /*utilizar a da venda*/ );
-        bd.append("Data Emissao" /*utilizar a da venda*/ );
-        bd.append("Endereco");
-        bd.append("CPF/CNPJ");
-        bd.append("Valor" /*utilizar a da venda*/ );
-        bd.append("Transportadora");
+        bd.append("Número da nota fiscal: " + venda.getNumber()+ "\n");
+        bd.append("Natureza da operacao: Venda de mercadoria" + "\n");
+        bd.append("Chave de acesso: " + chaveDeAcesso+ "\n");
+        bd.append("Nome/Razão Social: " + venda.getCliente().getPessoa().getNome() + "\n");
+        bd.append("Data Emissao" +  "\n");
+        bd.append("Endereco" + venda.getCliente().getPessoa().getEndereco() + "\n");
+        bd.append("CPF/CNPJ" + venda.getCliente().getPessoa().getDocumentoPrincipal() + "\n");
+        bd.append("Valor: " + venda.Total());
+        bd.append("Transportadora" + "\n");
         bd.append("Complemento");
 
         return bd.toString();

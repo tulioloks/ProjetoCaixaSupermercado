@@ -39,7 +39,6 @@ public class Venda {
         return soma;
     }
 
-
     public void validacao(){
 
     }
@@ -141,12 +140,6 @@ public class Venda {
         return bd.toString();
     }
 
-    @Override
-    public String toString() {
-        return "Venda{" +
-                "status=" + status +
-                '}';
-    }
 
     public List<ItemVenda> getItem() {
         return item;
