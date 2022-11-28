@@ -15,6 +15,15 @@ public class PessoaFisicaDAO {
     static List<PessoaFisica> pessoasF = new ArrayList<>();
 
     public static void carregarDados() {
+        PessoaFisica pf2 = new PessoaFisica("Cliente diversos",
+                "null",
+                "null",
+                new Endereco("null", "null", "null", null),
+                "null",
+                LocalDate.now());
+
+        salvar(pf2);
+
         PessoaFisica pf = new PessoaFisica("Weber",
                 "40028922",
                 "weberM@gmail.com",
@@ -32,6 +41,7 @@ public class PessoaFisicaDAO {
                 LocalDate.now());
 
         salvar(pf1);
+
     }
 
 

@@ -70,5 +70,4 @@ public class RelatorioItensForms extends JPanel{
                 e.printStackTrace();
             }
         }
-
 }

@@ -4,5 +4,6 @@ public enum StatusVenda {
     PROCESSANDO,
     IMPRIMINDO,
     FINALIZANDO,
-    INICIANDO
+    INICIANDO,
+    DEVOLVIDA
 }

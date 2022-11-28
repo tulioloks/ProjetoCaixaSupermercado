@@ -16,6 +16,7 @@ import FormatosDocumento.*;
 
 
 
+
 public class Main {
     public static void main(String[] args) throws SaidaException{
 
@@ -351,7 +352,7 @@ public class Main {
 
         }return null;
     }
-    private static Cliente chamaClientes() throws SaidaException {
+    private static Cliente chamaClientes(){
 
         Object[] selectionValues = getClienteDAO().findClientesInArray();
         String initialSelection = (String) selectionValues[0];
@@ -362,7 +363,6 @@ public class Main {
 
     }
 
-
     private static void realizarVenda() throws SaidaException {
 
         System.out.println("Venda Iniciada!!");
@@ -371,7 +371,6 @@ public class Main {
         venda.setCliente(chamaClientes());
 
         venda.validaItem();
-
 
 
         String[] opcoesMenuFormasPagamento = {"Dinheiro", "Credito", "Debito"};
@@ -440,7 +439,7 @@ public class Main {
     private static void menuNotsFiscais() throws SaidaException {
         String[] notas = {"Nota Fiscal", "Nota Devolução", "Voltar"};
         Integer notasSelecao = JOptionPane.showOptionDialog(null, "Escolha uma opção:",
-                "Tipo Pessoa",
+                "Notas fiscais",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, notas, notas[0]);
 
         switch (notasSelecao){
@@ -449,6 +448,8 @@ public class Main {
                 menuNotsFiscais();
                 break;
             case 1:
+                emissaoNotaFiscalDevolucao(chamaVendas());
+                menuNotsFiscais();
                 break;
             case 2:
                 telaInicial();
@@ -459,13 +460,17 @@ public class Main {
     private static void emissaoNotaFiscal(Venda venda){
         Nfe nfe = new Nfe();
 
-        if (venda.getStatus().equals(StatusVenda.FINALIZANDO)) {
+        nfe.setVenda(nfe.validarCliente(venda));
+        System.out.println(nfe.notaFiscal());
 
-            nfe.setVenda(venda);
-            System.out.println(nfe.notaFiscal());
-        }else {
-            System.out.println("Venda com status inválido, confira na lista de vendas!!!");
-        }
+    }
+
+    private static void emissaoNotaFiscalDevolucao(Venda venda){
+        Nfe nfe = new Nfe();
+
+        nfe.setVenda(nfe.validarCliente(venda));
+        venda.setStatus(StatusVenda.DEVOLVIDA);
+        System.out.println(nfe.notaFiscalDevolucao());
     }
 
     private static Venda chamaVendas() {

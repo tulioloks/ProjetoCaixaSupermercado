@@ -15,7 +15,7 @@ public class VendaDAO {
         }
 
     public static List<Venda> buscarTodos() {
-        System.out.println(venda);
+        //System.out.println(venda);
         return venda;
     }
 

@@ -2,20 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4999354d-e4cc-4c44-998e-23dfce054293" name="Changes" comment="Adicionar venda">
+      <change afterPath="$PROJECT_DIR$/src/Interface/ValidaNFE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Nfe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Nfe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ClienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ClienteDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/PessoaFisicaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/PessoaFisicaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/PessoaJuridicaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/PessoaJuridicaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/VendaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/VendaDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Nfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Nfe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Venda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Venda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/StatusVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/StatusVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Forms/RelatorioItensForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/RelatorioItensForms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PessoaFisicaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PessoaFisicaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PessoaJuridicaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PessoaJuridicaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/VendaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/VendaDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +25,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
