@@ -357,7 +357,7 @@ public class Main {
         Object[] selectionValues = getClienteDAO().findClientesInArray();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
-                "SeguradoraAPP", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+                "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Cliente> clientes = getClienteDAO().buscarPorNome((String) selection);
         return clientes.get(0);
 
@@ -478,7 +478,7 @@ public class Main {
         Object[] selectionValues = getVendaDAO().findVendaInArray();
         Integer initialSelection = (Integer) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a venda",
-                "SeguradoraAPP", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+                "Vendas", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Venda> venda = getVendaDAO().buscarPorCodigo(selection);
 
             return venda.get(0);
