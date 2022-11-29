@@ -15,7 +15,7 @@ public class RelatorioVendaForms extends JPanel{
     private static final long serialVersionUID = 1L;
 
     public static final String[] nomeColunas =
-            {"Núemero da venda", "Status", "Nome Cliente", "Valor Venda",""};
+            {"Núemero da venda", "Status", "Nome Cliente", "Valor Venda","Forma Pagamento",""};
 
     protected JTable table;
     protected JScrollPane scroller;

@@ -18,6 +18,7 @@ public abstract class Pessoa {
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
+
     }
 
     public Pessoa() {};
@@ -25,6 +26,8 @@ public abstract class Pessoa {
 
     public String getNome() { return nome;
     }
+
+
 
     public void setNome(String nome) {
         this.nome = nome;

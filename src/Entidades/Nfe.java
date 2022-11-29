@@ -3,6 +3,7 @@ package Entidades;
 import Interface.ValidaNFE;
 import Enums.StatusVenda;
 
+import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -46,36 +47,82 @@ public class Nfe implements ValidaNFE {
 
     public String notaFiscal(){
         StringBuilder bd = new StringBuilder();
+        Random gerador = new Random();
+        String complemento = JOptionPane.showInputDialog(null, "Digite o complemento da nota");
 
         bd.append("\n" + "\n" +"\n" );
+        bd.append("                                  NOTA FISCAL ELETRONICA                                   \n");
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
         bd.append("Número da nota fiscal: " + venda.getNumber()+ "\n");
-        bd.append("Natureza da operacao: Venda de mercadoria" + "\n");
-        bd.append("Chave de acesso: " + chaveDeAcesso+ "\n");
-        bd.append("Nome/Razão Social: " + venda.getCliente().getPessoa().getNome() + "\n");
+        bd.append("Natureza da operacao:                                               Venda de mercadoria" + "\n");
+
+
+        bd.append("Chave de acesso:                  " + gerador.nextInt(9999) + " " + gerador.nextInt(9999)+ " " + gerador.nextInt(9999) + " " + gerador.nextInt(9999)+ " "
+                + gerador.nextInt(9999 )+ " " + gerador.nextInt(9999)+ " " + gerador.nextInt(9999)+ " " + gerador.nextInt(9999)+ " "
+                + gerador.nextInt(9999)+ " " + gerador.nextInt(9999 )+ " " + gerador.nextInt(9999 )+ "\n");
+
+        bd.append("Nome/Razão Social:                                                  " + venda.getCliente().getPessoa().getNome() + "\n");
         bd.append("Data Emissao" +  "\n");
-        bd.append("Endereco" + venda.getCliente().getPessoa().getEndereco() + "\n");
+
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+
+        for(ItemVenda vendaItens : venda.getItemDasVendas()){
+            bd.append(vendaItens + "\n");
+        }
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+
+        bd.append("Total da nota                                                                        " + venda.Total() + "\n");
+
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+        bd.append("ENDEREÇO                                \n");
+        bd.append(venda.getCliente().getPessoa().getEndereco() + "\n");
         bd.append("CPF/CNPJ" + venda.getCliente().getPessoa().getDocumentoPrincipal() + "\n");
-        bd.append("Valor: " + venda.Total());
-        bd.append("Transportadora" + "\n");
-        bd.append("Complemento");
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+        bd.append("TRANSPORTADORA                                \n");
+        bd.append("Transportes Valdivia        Frete por conta: Emitente      Placa: HTS564         UF: SC     \nCPF/CNPJ 00000000000" + "\n");
+        bd.append("Complemento: " + complemento + "\n");
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
 
         return bd.toString();
     }
 
     public String notaFiscalDevolucao(){
         StringBuilder bd = new StringBuilder();
+        Random gerador = new Random();
+        String complemento = JOptionPane.showInputDialog(null, "Digite o complemento da nota");
 
         bd.append("\n" + "\n" +"\n" );
+        bd.append("                                  NOTA FISCAL DEVOLUÇÃO                                  \n");
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
         bd.append("Número da nota fiscal: " + venda.getNumber()+ "\n");
-        bd.append("Natureza da operacao: Devolução de mercadoria" + "\n");
-        bd.append("Chave de acesso: " + chaveDeAcesso+ "\n");
-        bd.append("Nome/Razão Social: " + venda.getCliente().getPessoa().getNome() + "\n");
+        bd.append("Natureza da operacao:                                               Devolução de mercadoria" + "\n");
+
+
+        bd.append("Chave de acesso:                  " + gerador.nextInt(9999) + " " + gerador.nextInt(9999)+ " " + gerador.nextInt(9999) + " " + gerador.nextInt(9999)+ " "
+                + gerador.nextInt(9999 )+ " " + gerador.nextInt(9999)+ " " + gerador.nextInt(9999)+ " " + gerador.nextInt(9999)+ " "
+                + gerador.nextInt(9999)+ " " + gerador.nextInt(9999 )+ " " + gerador.nextInt(9999 )+ "\n");
+
+        bd.append("Nome/Razão Social:                                                  " + venda.getCliente().getPessoa().getNome() + "\n");
         bd.append("Data Emissao" +  "\n");
-        bd.append("Endereco" + venda.getCliente().getPessoa().getEndereco() + "\n");
+
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+
+        for(ItemVenda vendaItens : venda.getItemDasVendas()){
+            bd.append(vendaItens + "\n");
+        }
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+
+        bd.append("Total da nota                                                                        " + venda.Total() + "\n");
+
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+        bd.append("ENDEREÇO                                \n");
+        bd.append(venda.getCliente().getPessoa().getEndereco() + "\n");
         bd.append("CPF/CNPJ" + venda.getCliente().getPessoa().getDocumentoPrincipal() + "\n");
-        bd.append("Valor: " + venda.Total());
-        bd.append("Transportadora" + "\n");
-        bd.append("Complemento");
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
+        bd.append("TRANSPORTADORA                                \n");
+        bd.append("Transportes Valdivia        Frete por conta: Emitente      Placa: HTS564         UF: SC     \nCPF/CNPJ 00000000000" + "\n");
+        bd.append("Complemento: " + complemento + "\n");
+        bd.append("-------------------------------------------------------------------------------------------" +  "\n");
 
         return bd.toString();
     }

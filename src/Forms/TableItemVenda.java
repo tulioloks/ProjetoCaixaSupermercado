@@ -6,10 +6,11 @@ import java.util.Vector;
 public class TableItemVenda extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
 
-    public static final int INDEX_NOME = 0;
-    public static final int INDEX_TIPO = 1;
-    public static final int INDEX_DOCUMENTO = 2;
-    public static final int INDEX_ESCONDIDO = 3;
+    public static final int INDEX_CODIGO = 0;
+    public static final int INDEX_NOME = 1;
+    public static final int INDEX_TIPO = 2;
+    public static final int INDEX_DOCUMENTO = 3;
+    public static final int INDEX_ESCONDIDO = 4;
 
     protected String[] nomeColunas;
     protected Vector<ItemVenda> vetorDados;
@@ -37,6 +38,8 @@ public class TableItemVenda extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         ItemVenda registroItem = (ItemVenda) vetorDados.get(linha);
         switch (coluna) {
+            case INDEX_CODIGO:
+                return registroItem.getNumero();
             case INDEX_NOME:
                 return registroItem.getNomeProduto();
             case INDEX_TIPO:

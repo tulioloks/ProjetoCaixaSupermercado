@@ -15,7 +15,7 @@ public class RelatorioItensForms extends JPanel{
         private static final long serialVersionUID = 1L;
 
         public static final String[] nomeColunas =
-                {"Nome", "Valor", "Quantidade", ""};
+                {"Codigo","Descrição", "Valor", "Quantidade", ""};
 
         protected JTable table;
         protected JScrollPane scroller;

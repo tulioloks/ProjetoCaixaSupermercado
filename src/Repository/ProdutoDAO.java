@@ -29,7 +29,6 @@ public class ProdutoDAO {
     }
 
     public static List<ItemVenda> buscarTodos() {
-        System.out.println(produtos);
         return produtos;
     }
 

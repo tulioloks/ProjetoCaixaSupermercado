@@ -2,6 +2,7 @@ package Repository;
 
 import Entidades.Endereco;
 import Entidades.PessoaFisica;
+import Enums.TipoPessoa;
 
 import javax.swing.*;
 import java.time.LocalDate;
@@ -16,10 +17,10 @@ public class PessoaFisicaDAO {
 
     public static void carregarDados() {
         PessoaFisica pf2 = new PessoaFisica("Cliente diversos",
-                "null",
-                "null",
-                new Endereco("null", "null", "null", null),
-                "null",
+                "",
+                "",
+                new Endereco("", "", "", null),
+                "",
                 LocalDate.now());
 
         salvar(pf2);

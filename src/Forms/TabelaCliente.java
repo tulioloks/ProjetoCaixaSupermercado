@@ -8,9 +8,10 @@ public class TabelaCliente extends AbstractTableModel{
         private static final long serialVersionUID = 1L;
 
         public static final int INDEX_NOME = 0;
-        public static final int INDEX_TIPO = 1;
-        public static final int INDEX_DOCUMENTO = 2;
-        public static final int INDEX_ESCONDIDO = 3;
+        public static final int INDEX_DOCUMENTO = 1;
+        public static final int INDEX_TELEFONE = 2;
+        public static final int INDEX_EMAIL = 3;
+        public static final int INDEX_ESCONDIDO = 4;
 
         protected String[] nomeColunas;
         protected Vector<Cliente> vetorDados;
@@ -40,10 +41,12 @@ public class TabelaCliente extends AbstractTableModel{
             switch (coluna) {
                 case INDEX_NOME:
                     return registroItem.getPessoa().getNome();
-                case INDEX_TIPO:
-                    return registroItem.getPessoa().getDocumentoPrincipal();
                 case INDEX_DOCUMENTO:
+                    return registroItem.getPessoa().getDocumentoPrincipal();
+                case INDEX_TELEFONE:
                     return registroItem.getPessoa().getTelefone();
+                case INDEX_EMAIL:
+                    return registroItem.getPessoa().getEmail();
                 default:
                     return new Object();
             }

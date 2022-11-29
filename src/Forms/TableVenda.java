@@ -15,7 +15,8 @@ public class TableVenda extends AbstractTableModel {
     public static final int INDEX_STATUS = 1;
     public static final int INDEX_CLIENTE = 2;
     public static final int INDEX_TOTAL = 3;
-    public static final int INDEX_ESCONDIDO = 4;
+    public static final int INDEX_PAGAMENTO = 4;
+    public static final int INDEX_ESCONDIDO = 5;
 
     protected String[] nomeColunas;
     protected Vector<Venda> vetorDados;
@@ -51,6 +52,8 @@ public class TableVenda extends AbstractTableModel {
                 return registroItem.getCliente().getPessoa().getNome();
             case INDEX_TOTAL:
                 return registroItem.Total();
+            case INDEX_PAGAMENTO:
+                return registroItem.getTipoPagamento();
             default:
                 return new Object();
         }

@@ -15,8 +15,6 @@ import Exceptions.*;
 import FormatosDocumento.*;
 
 
-
-
 public class Main {
     public static void main(String[] args) throws SaidaException{
 
@@ -46,6 +44,7 @@ public class Main {
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuCadastro, opcoesMenuCadastro[0]);
 
         switch(menuCadastro){
+
             case 0:
                 menuCadastro();
                 break;
@@ -124,7 +123,6 @@ public class Main {
                             JOptionPane.showMessageDialog(null, "Erro! não existe nenhum cadastro com este Cpf, tente novamente", "Erro", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-
                     else {
                         JOptionPane.showMessageDialog(null, "Erro! o cpf informado deve estar no formato ***.***.***-**", "Erro de formato do Cpf", JOptionPane.ERROR_MESSAGE);
                     }
@@ -134,6 +132,7 @@ public class Main {
             else {
                 String cnpj;
                 PessoaJuridica pj;
+
                 while (true) {
                     cnpj = JOptionPane.showInputDialog(null, "Digite o cnpj no formato **.***.***/0001-**");
 
@@ -263,6 +262,7 @@ public class Main {
 
                 pessoaFisica.setNome(JOptionPane.showInputDialog(null, "Digite o nome: "));
                 pessoaFisica.setTelefone(JOptionPane.showInputDialog(null, "Digite o telefone: "));
+
                 while (true) {
                     pessoaFisica.setCpf(JOptionPane.showInputDialog(null, "Digite o cpf no formato ***.***.***-**"));
 
@@ -287,10 +287,12 @@ public class Main {
                 return pessoaFisica;
 
             } else {
+
                 PessoaJuridica pessoaJuridica = new PessoaJuridica();
 
                 pessoaJuridica.setNome(JOptionPane.showInputDialog(null, "Digite o nome: "));
                 pessoaJuridica.setRazaoSocial(JOptionPane.showInputDialog(null, "Digite a razão social: "));
+
                 while (true) {
                     pessoaJuridica.setCnpj(JOptionPane.showInputDialog(null, "Digite o cnpj no formato **.***.***/0001-**"));
                     System.out.println(FormatoCnpj.verificarFormato(pessoaJuridica.getCnpj()));
@@ -333,6 +335,7 @@ public class Main {
     private static ItemVenda cadastroProduto(){
 
         try{
+
             String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
             Double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor"));
             Integer quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantidade"));
@@ -349,7 +352,6 @@ public class Main {
 
         }catch (NullPointerException e){
 
-
         }return null;
     }
     private static Cliente chamaClientes(){
@@ -359,27 +361,26 @@ public class Main {
         Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
                 "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Cliente> clientes = getClienteDAO().buscarPorNome((String) selection);
-        return clientes.get(0);
 
+        return clientes.get(0);
     }
 
     private static void realizarVenda() throws SaidaException {
 
         System.out.println("Venda Iniciada!!");
+
         Venda venda = new Venda();
 
         venda.setCliente(chamaClientes());
-
         venda.validaItem();
 
-
         String[] opcoesMenuFormasPagamento = {"Dinheiro", "Credito", "Debito"};
+
         int menuPagamento = JOptionPane.showOptionDialog(null, "Forma de Pagamento:",
                 "Menu Forma de Pagamento",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuFormasPagamento, opcoesMenuFormasPagamento[0]);
 
         if (menuPagamento == 0){
-
             Double valorDinheiro = Double.valueOf(JOptionPane.showInputDialog(null, "Digite o valor em dinheiro",
                     "Balcão", JOptionPane.QUESTION_MESSAGE));
 
@@ -394,7 +395,6 @@ public class Main {
             }else if (troco < 0){
                 System.out.println("Troco para devolver: " + troco);
             }
-
             venda.setTipoPagamento(TipoPagamento.DINHEIRO);
         }
 

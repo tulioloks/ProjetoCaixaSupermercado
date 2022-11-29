@@ -15,7 +15,7 @@ public class RelatorioClienteForms extends JPanel{
         private static final long serialVersionUID = 1L;
 
         public static final String[] nomeColunas =
-                {"Nome", "Documento CPF/CNPJ", "Telefone", ""};
+                {"Nome", "Telefone","Documento CPF/CNPJ"," "," "};
 
         protected JTable table;
         protected JScrollPane scroller;

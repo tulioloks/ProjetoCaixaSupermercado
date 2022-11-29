@@ -12,6 +12,7 @@ import java.util.*;
 public class Venda {
 
     private List<ItemVenda> item = new ArrayList<>();
+    private List<ItemVenda> itemDasVendas = new ArrayList<>();
     private Cliente cliente;
     private Situacao pago;
     private StatusVenda status;
@@ -26,6 +27,10 @@ public class Venda {
 
     }
 
+    public List<ItemVenda> getItemDasVendas() {
+        return itemDasVendas;
+    }
+
     public Venda(Integer numero){
         Numero = numero;
     }
@@ -33,7 +38,7 @@ public class Venda {
 
     public Double Total(){
         Double soma = 0.0;
-        for (ItemVenda list: item){
+        for (ItemVenda list: itemDasVendas){
             soma = soma + list.subTotal();
         }
         return soma;
@@ -54,13 +59,17 @@ public class Venda {
         }
     }
 
+    public void adicionarItemNaVenda(ItemVenda itens){
+        itemDasVendas.add(itens);
+    }
+
     public void adicionarItem(ItemVenda itens){
         item.add(itens);
     }
 
     public void validaItem() throws SaidaException {
-        boolean cadastrando = true;
 
+        boolean cadastrando = true;
 
                 while (cadastrando == true) {
                     try {
@@ -72,11 +81,20 @@ public class Venda {
                         List<ItemVenda> itens = ProdutoDAO.buscarPorCodigo(codigoProduto);
 
                         for (ItemVenda itemAdicionar : itens) {
-                            itemAdicionar.setQuantidade(quantidadeProduto);
-                            itemAdicionar = new ItemVenda(codigoProduto, itemAdicionar.getNomeProduto(), itemAdicionar.getValorUnitario(), itemAdicionar.getQuantidade());
 
-                            System.out.println("Item Adicionado a venda: " + itemAdicionar);
-                            adicionarItem(itemAdicionar);
+                            if (itemAdicionar.getQuantidade() >= quantidadeProduto){
+
+                                ItemVenda produtosVenda = new ItemVenda(codigoProduto, itemAdicionar.getNomeProduto(), itemAdicionar.getValorUnitario(), quantidadeProduto);
+                                itemAdicionar.setQuantidade(itemAdicionar.getQuantidade() - quantidadeProduto);
+
+                                    System.out.println("Item Adicionado a venda: " + produtosVenda);
+
+                                adicionarItemNaVenda(produtosVenda);
+                                adicionarItem(itemAdicionar);
+
+                            }else {
+                                System.out.println("Produto não possui estoque suficiente!!");
+                            }
                         }
                     }
                     catch (NumberFormatException b ){
@@ -128,7 +146,7 @@ public class Venda {
         bd.append("                  ITENS DA VENDA " + "\n");
         bd.append("\n");
 
-        for (ItemVenda list : item){
+        for (ItemVenda list : itemDasVendas){
             bd.append(list + "\n");
 
         }
@@ -139,7 +157,6 @@ public class Venda {
         bd.append("Total da Venda:                            R$" + Total());
         return bd.toString();
     }
-
 
     public List<ItemVenda> getItem() {
         return item;

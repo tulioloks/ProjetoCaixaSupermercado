@@ -23,6 +23,10 @@ public class PessoaFisica extends Pessoa {
 
     }
 
+    public PessoaFisica(String cliente_diversos, String aNull, String aNull1, Endereco endereco, String aNull2, LocalDate now, TipoPessoa fisica) {
+
+    }
+
     public String getCpf() {
         return cpf;
     }
