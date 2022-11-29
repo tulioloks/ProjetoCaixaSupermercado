@@ -130,6 +130,7 @@ public class Main {
             }
 
             else {
+
                 String cnpj;
                 PessoaJuridica pj;
 
@@ -150,7 +151,6 @@ public class Main {
                     }
                 }
             }
-
         }
 
         else if (op == 2) {//Exclusão
@@ -275,8 +275,6 @@ public class Main {
                         JOptionPane.showMessageDialog(null, "Erro! o cpf deve ser digitado no formato ***.***.***-**", "Erro de formato de Cpf", JOptionPane.ERROR_MESSAGE);
                         continue;
                     }
-
-
                     break;
                 }
                 pessoaFisica.setEmail(JOptionPane.showInputDialog(null, "Digite o e-mail: "));
@@ -330,6 +328,30 @@ public class Main {
         endereco.setNumero(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número do endereço: ")));
 
         return endereco;
+    }
+
+    private static void menuCadastroProduto() throws SaidaException {
+        String[] opcoesMenuCadastro = {"Cadastro", "Alteração", "Exclusão"};
+        int menu = JOptionPane.showOptionDialog(null, "Cadastros:",
+                "Menu Cadastros",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuCadastro, opcoesMenuCadastro[0]);
+
+        switch(menu){
+
+            case 0:
+                ItemVenda produto = cadastroProduto();
+                ProdutoDAO.salvar(produto);
+                break;
+
+            case 1:
+
+                break;
+
+        }
+    }
+
+    private static void alterarProduto(){
+
     }
 
     private static ItemVenda cadastroProduto(){
@@ -419,9 +441,7 @@ public class Main {
 
         switch(menu){
             case 0:
-                ItemVenda produto = cadastroProduto();
-
-                ProdutoDAO.salvar(produto);
+                menuCadastroProduto();
                 telaInicial();
                 break;
 

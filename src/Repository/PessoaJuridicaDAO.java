@@ -43,6 +43,7 @@ public class PessoaJuridicaDAO {
 
     public static void excluir(PessoaJuridica pj) {
         pessoasJ.remove(pj);
+        ClienteDAO.excluir(pj);
     }
 
     public static void editar(PessoaJuridica pj) {

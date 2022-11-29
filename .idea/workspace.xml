@@ -4,24 +4,14 @@
     <list default="true" id="4999354d-e4cc-4c44-998e-23dfce054293" name="Changes" comment="Adicionar venda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/NfDevolucao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Venda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ProdutoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ProdutoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/NfDevolucao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Nfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Nfe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/PessoaFisica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/PessoaFisica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Venda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Venda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Forms/RelatorioClienteForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/RelatorioClienteForms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Forms/RelatorioItensForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/RelatorioItensForms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Forms/RelatorioVendaForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/RelatorioVendaForms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Forms/TabelaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/TabelaCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Forms/TableItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/TableItemVenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Forms/TableVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/TableVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PessoaFisicaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PessoaFisicaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PessoaJuridicaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PessoaJuridicaDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

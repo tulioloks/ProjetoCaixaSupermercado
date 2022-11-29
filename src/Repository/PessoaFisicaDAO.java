@@ -45,7 +45,6 @@ public class PessoaFisicaDAO {
 
     }
 
-
     public static void salvar(PessoaFisica pessoa) {
         pessoasF.add(pessoa);
     }

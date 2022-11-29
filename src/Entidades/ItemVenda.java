@@ -1,16 +1,14 @@
 package Entidades;
 
-import Repository.ProdutoDAO;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ItemVenda {
-    private Integer Numero;
-    private String NomeProduto;
-    private Double ValorUnitario;
-    private Integer Quantidade;
-    private Double SubTotal;
+    private Integer numero;
+    private String nomeProduto;
+    private Double valorUnitario;
+    private Integer quantidade;
+    private Double subTotal;
     private List<ItemVenda> item = new ArrayList<>();
 
     public ItemVenda(){
@@ -25,23 +23,21 @@ public class ItemVenda {
 
     }
 
-
     public Double subTotal(){
-        return Quantidade * ValorUnitario;
+        return quantidade * valorUnitario;
     }
 
     @Override
     public String toString(){
-        return Numero + " - " + NomeProduto +"       "+ Quantidade + " UN X " + ValorUnitario + "      Vl.Total. R$ " + subTotal();
+        return numero + " - " + nomeProduto +"       "+ quantidade + " UN X " + valorUnitario + "      Vl.Total. R$ " + subTotal();
     }
 
     public ItemVenda(Integer numero,String nomeProduto, Double valorUnitario, Integer quantidade) {
-        Numero = numero;
-        NomeProduto = nomeProduto;
-        ValorUnitario = valorUnitario;
-        Quantidade = quantidade;
+        this.numero = numero;
+        this.nomeProduto = nomeProduto;
+        this.valorUnitario = valorUnitario;
+        this.quantidade = quantidade;
     }
-
 
     public void mostrarItens(){
         for(ItemVenda cadas : item){
@@ -50,42 +46,42 @@ public class ItemVenda {
     }
 
     public Double getSubTotal() {
-        return SubTotal;
+        return subTotal;
     }
 
     public void setSubTotal(Double subTotal) {
-        SubTotal = subTotal;
+        this.subTotal = subTotal;
     }
 
     public Integer getNumero() {
-        return Numero;
+        return numero;
     }
 
     public void setNumero(Integer numero) {
-        Numero = numero;
+        this.numero = numero;
     }
 
     public String getNomeProduto() {
-        return NomeProduto;
+        return nomeProduto;
     }
 
     public void setNomeProduto(String nomeProduto) {
-        NomeProduto = nomeProduto;
+        this.nomeProduto = nomeProduto;
     }
 
     public Double getValorUnitario() {
-        return ValorUnitario;
+        return valorUnitario;
     }
 
     public void setValorUnitario(Double valorUnitario) {
-        ValorUnitario = valorUnitario;
+        this.valorUnitario = valorUnitario;
     }
 
     public Integer getQuantidade() {
-        return Quantidade;
+        return quantidade;
     }
 
     public void setQuantidade(Integer quantidade) {
-        Quantidade = quantidade;
+        this.quantidade = quantidade;
     }
 }

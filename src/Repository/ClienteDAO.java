@@ -22,6 +22,7 @@ public final class ClienteDAO {
 
     public static void excluir(Pessoa pessoa) {
         clientes.remove(pessoa);
+
     }
 
 

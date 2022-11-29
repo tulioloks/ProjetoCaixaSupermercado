@@ -10,26 +10,9 @@ import java.util.*;
 public class Nfe implements ValidaNFE {
 
     private Venda venda;
-    private Cliente cliente;
-    private Endereco endereco;
-    private Integer numeroNf;
-    private Integer chaveDeAcesso;
-    private Integer Parcelas;
     private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private List<String> datas = new ArrayList<>();
     private Date now = new Date();
-
-
-    public void validacaoTempo(){
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(now);
-        for(int i=1; i<Parcelas; i++){
-            cal.add(Calendar.MONTH, i);
-            Date data = cal.getTime();
-            String dataFormatada = sdf.format(data);
-            datas.add(dataFormatada);
-        }
-    }
 
     @Override
     public Venda validarCliente(Venda venda) {
