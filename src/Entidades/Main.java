@@ -1,5 +1,4 @@
 package Entidades;
-import Enums.Situacao;
 import Enums.StatusVenda;
 import Enums.TipoPagamento;
 import Enums.TipoPessoa;
@@ -32,7 +31,7 @@ public class Main {
 
         PessoaJuridicaDAO.carregarDados();
         ProdutoDAO.produtoPreCarregado();
-        
+
         pessoas.addAll(PessoaFisicaDAO.buscarTodos());
         pessoas.addAll(PessoaJuridicaDAO.buscarTodos());
 
@@ -364,7 +363,7 @@ public class Main {
     }
 
     private static void menuCadastroProduto() throws SaidaException {
-        String[] opcoesMenuCadastro = {"Cadastro", "Alteração", "Exclusão"};
+        String[] opcoesMenuCadastro = {"Cadastro", "Alteração", "Exclusão","Voltar"};
         int menu = JOptionPane.showOptionDialog(null, "Cadastros:",
                 "Menu Cadastros",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuCadastro, opcoesMenuCadastro[0]);
@@ -372,8 +371,7 @@ public class Main {
         switch(menu){
 
             case 0:
-                ItemVenda produto = cadastroProduto();
-                ProdutoDAO.salvar(produto);
+                cadastroProduto();
                 break;
 
             case 1:
@@ -383,6 +381,9 @@ public class Main {
                 ProdutoDAO.excluirItens(excluirProduto());
                 break;
 
+            case 3:
+                telaInicial();
+                break;
         }
     }
 
@@ -400,39 +401,48 @@ public class Main {
 
         Object[] selectionValues = getProdutoDAO().findProdutosInArray();
         String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
+        String selection = (String) JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
                 "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<ItemVenda> itemvenda = getProdutoDAO().buscarTodos();
+        System.out.println(selection);
+        List<ItemVenda> itemvenda = ProdutoDAO.buscarPorNome(selection);
         for (ItemVenda itemAlterar : itemvenda){
-            itemAlterar.equals(selection);
+
             itemAlterar.setNomeProduto(JOptionPane.showInputDialog(null, "Digite o nome: ", itemAlterar.getNomeProduto()));
             itemAlterar.setValorUnitario(Double.valueOf(JOptionPane.showInputDialog(null, "Digite Valor: ", itemAlterar.getValorUnitario())));
             itemAlterar.setQuantidade(Integer.valueOf(JOptionPane.showInputDialog(null, "Digite a quantidade: ", itemAlterar.getQuantidade())));
             itemAlterar.setNumero(Integer.valueOf(JOptionPane.showInputDialog(null, "Digite o numero: ", itemAlterar.getNumero())));
+            itemAlterar.equals(selection);
+            itemvenda.add(itemAlterar);
+            break;
         }
     }
 
-    private static ItemVenda cadastroProduto(){
-
+    private static void cadastroProduto(){
+        ItemVenda cadastroItem = new ItemVenda();
         try{
 
-            String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
-            Double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor"));
-            Integer quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantidade"));
             Integer numero = Integer.valueOf(JOptionPane.showInputDialog(null, "Número"));
 
-            ItemVenda cadastroItem = new ItemVenda();
+            if(ProdutoDAO.buscarPorCodigoInteiro(numero) == false){
+                telaInicial();
+            }else{
 
-            cadastroItem.setNumero(numero);
-            cadastroItem.setNomeProduto(nome);
-            cadastroItem.setValorUnitario(valor);
-            cadastroItem.setQuantidade(quantidade);
-
-            return cadastroItem;
+                String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
+                Double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor"));
+                Integer quantidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantidade"));
+                cadastroItem.setNumero(numero);
+                cadastroItem.setNomeProduto(nome);
+                cadastroItem.setValorUnitario(valor);
+                cadastroItem.setQuantidade(quantidade);
+                JOptionPane.showMessageDialog(null, "Produto Cadastrado!!", "Cadastro Produto", JOptionPane.INFORMATION_MESSAGE);
+                ProdutoDAO.salvar(cadastroItem);
+            }
 
         }catch (NullPointerException e){
 
-        }return null;
+        } catch (SaidaException e) {
+            throw new RuntimeException(e);
+        }
     }
     private static Cliente chamaClientes(){
 
@@ -544,16 +554,19 @@ public class Main {
 
     private static void emissaoNotaFiscal(Venda venda) throws SaidaException {
         Nfe nfe = new Nfe();
+        try {
+            if (!venda.getStatus().equals(StatusVenda.FINALIZANDO)) {
+                JOptionPane.showMessageDialog(null, "Venda com status inválido, confira na lista de vendas!!\"!!", "Erro Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
+                menuNotsFiscais();
 
-        if (!venda.getStatus().equals(StatusVenda.FINALIZANDO)) {
-            JOptionPane.showMessageDialog(null, "Venda com status inválido, confira na lista de vendas!!\"!!", "Erro Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
-            menuNotsFiscais();
+            } else {
+                nfe.validarCliente(venda);
+                venda.setStatus(StatusVenda.NOTA_IMPRESSA);
+                nfe.setVenda(venda);
+                System.out.println(nfe.notaFiscal());
+            }
+        }catch (NullPointerException e ){
 
-        }else {
-            nfe.validarCliente(venda);
-            venda.setStatus(StatusVenda.NOTA_IMPRESSA);
-            nfe.setVenda(venda);
-            System.out.println(nfe.notaFiscal());
         }
     }
 

@@ -17,18 +17,20 @@ public class Nfe implements ValidaNFE {
     private Date now = new Date();
 
     @Override
-    public Venda validarCliente(Venda venda) throws SaidaException {
+    public Venda validarCliente(Venda venda) {
 
-        if(venda.getCliente().getPessoa().getNome().equals("Cliente diversos")){
-            JOptionPane.showMessageDialog(null, "Cliente diversos! Insira o cliente na venda\"!!", "Erro Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
-            Object[] selectionValues = Main.getClienteDAO().findClientesInArray();
-            String initialSelection = (String) selectionValues[0];
-            Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente para inserir na nota",
-                    "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-            List<Cliente> clientes = Main.getClienteDAO().buscarPorNome((String) selection);
+        if(venda.getCliente().getPessoa().getNome().equals("Cliente diversos")) {
 
-            venda.setCliente(clientes.get(0));
-            venda.setStatus(StatusVenda.NOTA_IMPRESSA);
+            JOptionPane.showMessageDialog(null, "Cliente diversos! Insira o cliente na venda!!", "Erro Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
+                Object[] selectionValues = Main.getClienteDAO().findClientesInArray();
+                String initialSelection = (String) selectionValues[0];
+                Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente para inserir na nota",
+                        "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+                List<Cliente> clientes = Main.getClienteDAO().buscarPorNome((String) selection);
+
+                venda.setCliente(clientes.get(0));
+                venda.setStatus(StatusVenda.NOTA_IMPRESSA);
+
         }
         return venda;
     }

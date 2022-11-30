@@ -2,6 +2,7 @@ package Repository;
 
 import Entidades.ItemVenda;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +77,15 @@ public class ProdutoDAO {
             }
         }
         return produtosFiltrados;
+    }
+
+    public static boolean buscarPorCodigoInteiro(Integer codigo) {
+        for (ItemVenda produto : produtos) {
+            if (produto.getNumero().equals(codigo)) {
+                JOptionPane.showMessageDialog(null, "Produto com o código digitado já existe!", "Cadastro de produto", JOptionPane.INFORMATION_MESSAGE);
+                return false;
+            }
+        }return true;
     }
 
     public static Object[] findProdutosInArray() {

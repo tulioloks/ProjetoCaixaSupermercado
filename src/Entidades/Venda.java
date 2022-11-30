@@ -6,6 +6,7 @@ import Exceptions.SaidaException;
 import Repository.ProdutoDAO;
 
 import javax.swing.*;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -19,7 +20,7 @@ public class Venda {
     private TipoPagamento tipoPagamento;
     private Date now = new Date();
     private Integer Numero;
-    private Integer Parcelas;
+    private Integer Parcelas = 1;
     private List<String> datas = new ArrayList<>();
     private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -37,6 +38,7 @@ public class Venda {
 
 
     public Double Total(){
+
         Double soma = 0.0;
         for (ItemVenda list: itemDasVendas){
             soma = soma + list.subTotal();
@@ -158,7 +160,8 @@ public class Venda {
         bd.append("\n");
         bd.append("Condição Pagamento: " + getParcelas() + "X" +"     Valor parcelas: R$"+ Total() / getParcelas() +"\n");
         setStatus((StatusVenda.FINALIZANDO));
-        bd.append("Total da Venda:                            R$" + Total());
+
+        bd.append("Total da Venda:                            R$"+ Total());
         return bd.toString();
     }
 
@@ -211,7 +214,7 @@ public class Venda {
     }
 
     public Integer getParcelas() {
-        return Parcelas = 1;
+        return Parcelas;
     }
 
     public void setParcelas(Integer parcelas) {

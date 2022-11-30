@@ -109,16 +109,6 @@ public class PessoaFisicaDAO {
         return pessoasF;
     }
 
-    public static PessoaFisica buscarPorNome(String nome) {
-        PessoaFisica pfFiltrada = null;
-        for (PessoaFisica pf : pessoasF) {
-            if (pf.getNome().equals(nome)) {
-                pfFiltrada = pf;
-            }
-        }
-        return pfFiltrada;
-    }
-
     public static Object[] findPessoasInArray() {
         List<PessoaFisica> pessoasFisicas = PessoaFisicaDAO.buscarTodos();
         List<String> pfNomes = new ArrayList<>();
@@ -138,7 +128,6 @@ public class PessoaFisicaDAO {
                 return pf;
             }
         }
-
         return null;
     }
 }
