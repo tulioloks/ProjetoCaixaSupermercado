@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Entidades.Cliente;
 import Entidades.Pessoa;
+import Entidades.PessoaFisica;
 
 public final class ClienteDAO {
 
@@ -14,6 +15,16 @@ public final class ClienteDAO {
             salvar(pessoa);
         }
 
+    }
+
+    public static Cliente buscarPorNomeClientes(String nome) {
+        Cliente pfFiltrada = null;
+        for (Cliente pf : clientes) {
+            if (pf.getPessoa().getNome().equals(nome)) {
+                pfFiltrada = pf;
+            }
+        }
+        return pfFiltrada;
     }
 
     public static void salvar(Pessoa pessoa) {

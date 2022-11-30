@@ -32,7 +32,7 @@ public class Main {
 
         PessoaJuridicaDAO.carregarDados();
         ProdutoDAO.produtoPreCarregado();
-
+        
         pessoas.addAll(PessoaFisicaDAO.buscarTodos());
         pessoas.addAll(PessoaJuridicaDAO.buscarTodos());
 
@@ -546,7 +546,7 @@ public class Main {
         Nfe nfe = new Nfe();
 
         if (!venda.getStatus().equals(StatusVenda.FINALIZANDO)) {
-            System.out.println("\n \n \n \nVenda com status inválido, confira na lista de vendas!!!");
+            JOptionPane.showMessageDialog(null, "Venda com status inválido, confira na lista de vendas!!\"!!", "Erro Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
             menuNotsFiscais();
 
         }else {
@@ -555,7 +555,6 @@ public class Main {
             nfe.setVenda(venda);
             System.out.println(nfe.notaFiscal());
         }
-
     }
 
     private static void emissaoNotaFiscalDevolucao(Venda venda) throws SaidaException {

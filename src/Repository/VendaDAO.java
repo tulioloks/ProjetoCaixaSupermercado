@@ -1,7 +1,11 @@
 package Repository;
 
+import Entidades.Cliente;
 import Entidades.ItemVenda;
+import Entidades.PessoaFisica;
 import Entidades.Venda;
+import Enums.StatusVenda;
+import Enums.TipoPagamento;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +19,6 @@ public class VendaDAO {
         }
 
     public static List<Venda> buscarTodos() {
-        //System.out.println(venda);
         return venda;
     }
 

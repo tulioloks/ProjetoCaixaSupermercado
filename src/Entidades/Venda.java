@@ -44,6 +44,10 @@ public class Venda {
         return soma;
     }
 
+    public Double Total(Double valor){
+        return valor;
+    }
+
     public void validacao(){
 
     }

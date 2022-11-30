@@ -20,10 +20,10 @@ public class Nfe implements ValidaNFE {
     public Venda validarCliente(Venda venda) throws SaidaException {
 
         if(venda.getCliente().getPessoa().getNome().equals("Cliente diversos")){
-            System.out.println("\n \n \n \nVenda sem cliente informado! Informe um cliente na venda!");
+            JOptionPane.showMessageDialog(null, "Cliente diversos! Insira o cliente na venda\"!!", "Erro Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
             Object[] selectionValues = Main.getClienteDAO().findClientesInArray();
             String initialSelection = (String) selectionValues[0];
-            Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
+            Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente para inserir na nota",
                     "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
             List<Cliente> clientes = Main.getClienteDAO().buscarPorNome((String) selection);
 
