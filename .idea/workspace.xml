@@ -4,14 +4,16 @@
     <list default="true" id="4999354d-e4cc-4c44-998e-23dfce054293" name="Changes" comment="Adicionar venda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Entidades/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/ItemVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ClienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/ClienteDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/PessoaJuridicaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoCaixaSupermercado/Repository/PessoaJuridicaDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entidades/Nfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Nfe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Forms/RelatorioClienteForms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/RelatorioClienteForms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Forms/TabelaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forms/TabelaCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entidades/Venda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Venda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/StatusVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/StatusVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/ValidaNFE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/ValidaNFE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PessoaFisicaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PessoaFisicaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PessoaJuridicaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PessoaJuridicaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProdutoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +41,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/weber/Downloads/ExemploProjetoPOO.v2-main/ExemploProjetoPOO.v2-main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Tulio/Desktop/teste/ProjetoCaixaSupermercado-main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Forms" />

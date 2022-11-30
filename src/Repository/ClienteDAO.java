@@ -21,7 +21,13 @@ public final class ClienteDAO {
     }
 
     public static void excluir(Pessoa pessoa) {
-        clientes.remove(pessoa);
+
+        for (int i = 0; i < clientes.size(); i++) {
+            if (clientes.get(i).getPessoa() == pessoa) {
+                clientes.remove(i);
+
+            }
+        }
 
     }
 

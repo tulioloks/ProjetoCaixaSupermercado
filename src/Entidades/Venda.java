@@ -152,7 +152,7 @@ public class Venda {
         }
         bd.append("====================================================\n");
         bd.append("\n");
-        bd.append("Situação: " + getPago() + "\n");
+        bd.append("Condição Pagamento: " + getParcelas() + "X" +"     Valor parcelas: R$"+ Total() / getParcelas() +"\n");
         setStatus((StatusVenda.FINALIZANDO));
         bd.append("Total da Venda:                            R$" + Total());
         return bd.toString();
@@ -207,7 +207,7 @@ public class Venda {
     }
 
     public Integer getParcelas() {
-        return Parcelas;
+        return Parcelas = 1;
     }
 
     public void setParcelas(Integer parcelas) {

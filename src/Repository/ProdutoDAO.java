@@ -32,6 +32,10 @@ public class ProdutoDAO {
         return produtos;
     }
 
+    public static void excluirItens(ItemVenda itemVenda){
+        produtos.remove(itemVenda);
+    }
+
     public static List<ItemVenda> buscarPorNome(String descricao) {
         List<ItemVenda> produtosFiltrados = new ArrayList<>();
         for (ItemVenda produto : produtos) {

@@ -1,7 +1,9 @@
 package Entidades;
 
+import Exceptions.SaidaException;
 import Interface.ValidaNFE;
 import Enums.StatusVenda;
+import Repository.ClienteDAO;
 
 import javax.swing.*;
 import java.text.SimpleDateFormat;
@@ -15,13 +17,20 @@ public class Nfe implements ValidaNFE {
     private Date now = new Date();
 
     @Override
-    public Venda validarCliente(Venda venda) {
-        if (venda.getStatus().equals(StatusVenda.FINALIZANDO) && !venda.getCliente().getPessoa().getNome().equals("Cliente diversos")) {
-            return venda;
-        }else {
-            System.out.println("\n \n \n \nVenda com status inválido, confira na lista de vendas!!!");
-            return null;
+    public Venda validarCliente(Venda venda) throws SaidaException {
+
+        if(venda.getCliente().getPessoa().getNome().equals("Cliente diversos")){
+            System.out.println("\n \n \n \nVenda sem cliente informado! Informe um cliente na venda!");
+            Object[] selectionValues = Main.getClienteDAO().findClientesInArray();
+            String initialSelection = (String) selectionValues[0];
+            Object selection = JOptionPane.showInputDialog(null, "Selecione o cliente do seguro?",
+                    "Clientes", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+            List<Cliente> clientes = Main.getClienteDAO().buscarPorNome((String) selection);
+
+            venda.setCliente(clientes.get(0));
+            venda.setStatus(StatusVenda.NOTA_IMPRESSA);
         }
+        return venda;
     }
 
     public void setVenda(Venda venda) {

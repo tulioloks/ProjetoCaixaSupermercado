@@ -5,5 +5,6 @@ public enum StatusVenda {
     IMPRIMINDO,
     FINALIZANDO,
     INICIANDO,
-    DEVOLVIDA
+    DEVOLVIDA,
+    NOTA_IMPRESSA
 }
